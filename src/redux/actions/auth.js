@@ -50,6 +50,8 @@ export const signup = user => async dispatch => {
   dispatch({
     type: REG_USER
   });
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
   try {
     response = await axios.post("auth/register", body, config);
     dispatch({
