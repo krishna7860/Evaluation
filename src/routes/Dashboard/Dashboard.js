@@ -32,7 +32,8 @@ const Dashboard = ({ history, token, meeting, fetchMeeting, logout }) => {
 };
 
 const mapStateToProps = state => ({
-  meeting: state.meeting.meeting_slot
+  meeting: state.meeting.meeting_slot,
+  token: state.auth.token
 });
 
 export default connect(mapStateToProps, { fetchMeeting, logout })(Dashboard);
