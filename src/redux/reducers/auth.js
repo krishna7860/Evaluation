@@ -65,6 +65,7 @@ export default (state = initialState, action) => {
     case AUTH_FAIL:
       return {
         ...state,
+        loading: "start",
         response: payload,
         isAuth: false,
         authUser: null
@@ -72,9 +73,10 @@ export default (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
-        response: {},
+        loading: "start",
         isAuth: false,
-        authUser: null
+        authUser: null,
+        response: payload
       };
     default:
       return state;

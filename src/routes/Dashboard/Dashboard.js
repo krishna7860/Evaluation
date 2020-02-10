@@ -8,7 +8,7 @@ import { Route, Switch } from "react-router-dom";
 import BookingDetails from "../../component/common/Booking/BookingDetails";
 import NotFound from "../NotFound";
 
-const Dashboard = ({ token, meeting, fetchMeeting, logout }) => {
+const Dashboard = ({ history, token, meeting, fetchMeeting, logout }) => {
   useEffect(() => {
     fetchMeeting();
   }, [meeting]);

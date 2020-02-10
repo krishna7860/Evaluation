@@ -36,7 +36,6 @@ export const checkAuthenticatedUser = username => async dispatch => {
       });
       localStorage.setItem("username", username);
     } catch (err) {
-      console.log(response);
       dispatch({
         type: AUTH_FAIL,
         payload: response
@@ -96,7 +95,8 @@ export const logout = () => dispatch => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     dispatch({
-      type: LOGOUT
+      type: LOGOUT,
+      payload: response
     });
   } catch (err) {
     console.error(err);
